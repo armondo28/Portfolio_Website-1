@@ -150,7 +150,7 @@ input[class^="btn-"]:hover {
 
 #header-inner {
   position: relative;
-  background: url(img/me.jpg) 20% 30%/cover;
+  background: url(/dist/img/me.jpg) 20% 30%/cover;
   height: 5.5rem;
   border-bottom: 3px solid #8334eb;
 }
@@ -693,14 +693,14 @@ input[class^="btn-"]:hover {
   #header-home {
     height: 10rem !important;
     border-bottom: 3px solid #8334eb;
-    background: url(img/me.jpg) no-repeat center top/cover !important;
+    background: url(/dist/img/me.jpg) no-repeat center top/cover !important;
   }
   #header-home .header-content {
     display: none;
   }
   #header-inner {
     height: 10rem !important;
-    background: url(img/me.jpg) no-repeat center top/cover;
+    background: url(/dist/img/me.jpg) no-repeat center top/cover;
   }
   #header-inner::after {
     height: 10rem !important;
@@ -864,7 +864,7 @@ img {
 
 #header-home {
   position: relative;
-  background: url(img/me.jpg) no-repeat center center/cover;
+  background: url(/dist/img/me.jpg) no-repeat center center/cover;
   background-color: black;
   height: 100vh;
   color: white;
