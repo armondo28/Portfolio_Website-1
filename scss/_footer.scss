@@ -1,0 +1,37 @@
+// footer
+
+// we're making the background of the footer dark w/ the txt white and the height of the section is 5 rem
+
+#main-footer {
+  background: $dark-color;
+  color: white;
+  height: 5rem;
+
+  // We want to display flex since we want everything in a row space between meaning everything is separated to both ends height is 5rem just like the parent element and we're centering everythin
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+
+    // this is for the social icons we're giving them some separation from the right side a slight border around them thats 2px white and solid border radius of %50 to make it circular height width line height 20px to make sure its centered in the middle text align center to make the sure icons are centered in the middle padding all sides .5rem to give the icons space from their borders
+
+    .social .fab {
+      margin-right: 1rem;
+      color: white !important;
+      border: 2px white solid;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+      padding: 0.5rem;
+
+      &:hover {
+        background: $main-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

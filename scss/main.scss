@@ -1,0 +1,289 @@
+@import "config";
+@import "utilities";
+@import "footer";
+@import "about";
+@import "work";
+@import "contact";
+@import "mediaq";
+
+// General Styles
+
+// Margin padding reset
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Font family is dosis imported from fonts.google. line height 1.6 background #fff
+
+body {
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+//  All links no text decoration, color is $dark-color
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+//  ul no bullet points
+
+ul {
+  list-style: none;
+}
+
+// We want all headings to be uppercase
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+//  img width is 100% we want it to take up the entire width of the their container
+
+img {
+  width: 100%;
+}
+
+// Logo my name
+
+.logo {
+  width: 200px;
+  height: 50px;
+  font-family: "Pacifico", cursive;
+  font-size: 1.2rem !important;
+  margin-left: 3rem;
+  border-bottom: none !important;
+}
+
+// Below we set up the transitional glo feature for my name
+
+.logo:hover {
+  color: #34eb8c !important;
+  transition: color 0.5s !important;
+}
+
+// Main Nav
+
+// We set up main nav as flex because its a row section we made space between to put the elements on opposite side of the page
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.7rem;
+  // below we grabbed the 4 links on the right side of menu and put them in a row
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+  // below we put space between the links
+
+  li {
+    padding: 0 2rem 2rem 0;
+  }
+  // below we made the link text white w/ a see thru border 1px solid w/ a .5rem padding and added a transition of .5s for border color to make the appear out of nowhere to appear
+
+  a {
+    color: white;
+    font-size: 1.05rem;
+    border-bottom: 1px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+    // below we created the hover effect for lightgrey when he hover them w/ a transition of .5sec
+    &:hover {
+      color: lightgrey;
+      transition: color 0.5s;
+      border-color: $medium-color;
+    }
+    // below we're making it that the current link stays gold underlined.
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+//  Header
+
+// We're making the header-home relative w/ the bg image no repeat center center/ contained since its too big to to be covered background color is black height is 100vh for entire height. text color is white. text is to be aligned in the middle.
+
+#header {
+  // home
+  &-home {
+    position: relative;
+    background: $bgimage no-repeat center center / cover;
+    background-color: black;
+    height: 100vh;
+    color: white;
+    text-align: center;
+
+    // Header Content this includes the H1 on the 1st page and the little blurb w/ the link beneath it
+
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+
+      a {
+        font-weight: bold;
+
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+
+  // Below is how we allowed the text to go over the overlay
+
+  &-home > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Below is how we created the black see thru over lay
+
+#header {
+  &-home::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Home Sections
+
+// These are the sections for "specialize"
+
+// For home-a specials class we gave it 3 rem padding top made it grid since it's 4 separate boxes grid gap of 1rem to give them speace and made into to template w/ 4 columns and they each take up 1fr evenly each
+
+// home section a
+#home {
+  &-a {
+    .specials {
+      margin-top: 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      // for the icons we made the main color(gold) as well as gave them .4 padding on the bottom of each
+
+      .fas {
+        color: $main-color;
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
+  // Home section b
+
+  // below we're creating home section b which is the section w/ the clients awareds etc we're making it grid display since there are 4 1fr each giving each li line height of 2
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        line-height: 2;
+        // stats title and stats number are both nested within html thus for sass also nested we are making the stats title fontsize 1.5rem
+        &.stats-title {
+          font-size: 1.5rem;
+        }
+        // Stats number is 2 rem w/ bold text
+        &.stats-number {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+
+      // here we are choosing different background colors for each li item we made sure to carefully the nest OUTSIDE LI then we chose the specific divs gave them 3 rem padding top and bottom then we did nth child odd and even and gave them opposite background colors.
+
+      div {
+        padding: 3rem 0;
+
+        &:nth-child(odd) {
+          background: $light-color;
+        }
+        &:nth-child(even) {
+          background: $medium-color;
+        }
+      }
+    }
+  }
+
+  // Home Section C
+
+  // This is the section titles creative process we're displaying everything grid centered 4 on each column 1fr each
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      // The & step the numbers we're making them position absolute meaning because we want to move it inward. fontsize is 28px background is main color border radius is 50% to give it that circular looks height width and line height are all 15px padding is 1rem tranisition to black will be 1s
+
+      // Process-step
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        background-color: $main-color;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+
+      // Process-icon this the larger circles w/ the icons inside border radius 50% to make it circular the rest is pretty self explanatory
+
+      &-icon {
+        border-radius: 50%;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        padding: 2rem;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        position: relative;
+        transition: all 1s;
+
+        // for the hover effect we're changing the color to main color we're also making it slightly bigger and it moves slightly
+
+        &:hover {
+          background: $main-color;
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+
+          // The background of the # also becomes dark during the hover
+
+          .process-step {
+            background: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Below we're grabbing the process icon which is the icon part of the section
+
+// We're making it circular w/ border radius background color is dark initally txt white padding 2rem all sides width height line height 70px text align center position relative so it doesn't put other things out of the

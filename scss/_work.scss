@@ -1,0 +1,133 @@
+// My work page
+
+// Below this is the grid section where all my work is being displayed 3 on each column w/ a slight box shadow of .3
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+// We're making item class position relative since everything inside of it will be position
+
+.item {
+  position: relative;
+  background: black;
+  overflow: hidden;
+
+  // We're adding an overlay
+
+  // we need empty content, position absolute, display block, opacity slightly see thru, top left 0 to cover the entire area w/ the width/height.
+
+  // transform allows to scale
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: inherit;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // Below we are starting the overlay effect essentially putting overlay outside of the view and w/ a transition
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    // cubic bezier allows us to choose the speed and the curvature
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  // bring in main color overlay now we make translate x and translate y to 0% so they take up the entire area
+
+  &:hover:after {
+    transform: scale(2) translateX(0%) translateY(0%) rotate(-28deg);
+  }
+
+  // Scale image on hover meaning when we hover it gets bigger
+
+  &:hover &-image {
+    transform: scale(1.1);
+    transition: scale 1s ease-in-out;
+  }
+
+  // Bring text in on hover
+
+  &:hover &-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // Below we are setting height to auto transform translateZ(0) display block
+
+  &-image {
+    height: auto;
+    transform: translateZ(0);
+    display: block;
+    transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  // not a 100% sure why we have the below code but when we get rid of it it messes everything up.
+
+  &-image:before {
+    content: "";
+    display: block;
+    padding-top: 75%;
+    overflow: hidden;
+  }
+
+  // Below is the actual img we want it to be position absolute to the parent element starting from the top left width 100% height is auto line height is 0
+
+  &-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+  }
+
+  // Below is all the words inside the boxes we're position them absolute to the parent element takes up entire area and opacity is 0 because we the base to be unseen and to be seen once we hover over it. z-index is 1 because we want it above the overlay and picture.
+
+  &-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    transform: (-20%);
+    transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1),
+      transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 300ms;
+  }
+
+  // Below is the area that where the words are located we're making it take up 100% of the width position absolute to the parent element. top 50% since we want it down the middle. transform -50 also helps centers it.
+
+  &-text-wrap {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // Below is the title words within the boxes we made them 2 rem with padding right left 1 rem 5px margin top
+
+  &-text-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 5px 0 0 0;
+  }
+
+  // Below are the words above the main larger words within the boxes we made them caps w/ .8 opacity slightly see thru 1.2 rem and no margin
+
+  &-text-category {
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}

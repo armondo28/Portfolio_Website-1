@@ -1,0 +1,135 @@
+// This is a partial dedicated to utility classes ill be using over and over again.
+
+.container {
+  max-width: $website-width;
+  margin: auto;
+  overflow: hidden;
+}
+
+// BUTTONS
+
+// below we're creating a btn shared base btn style that will apply to all buttons
+
+// This includes being displaying inline block w/padding a transition on hover nob border and cursor pointer
+
+%btn-shared {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+// Below we're setting up all the different btn classes and extending what we created btn shared into them.
+// We extend by typing @extend %btn-shared;
+
+.btn {
+  &-main {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $main-color;
+  }
+  &-light {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $light-color;
+  }
+  &-dark {
+    @extend %btn-shared;
+    color: #f4f4f4;
+    background-color: $dark-color;
+  }
+}
+
+// Below we're creating a hover class for anything that has 'btn-' we did for a tags and inputs as well
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: lightgrey;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Padding Classes we're setting up the utility padding classes so we can easily input them wherever we made need them
+
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+
+// Margin classes we're setting up the utility for them so we can easily input them into our html when needed
+
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+
+// Below we're setting up the sections titles we're making the font 2rem display block level padding bottom .5 font is bold uppercase
+
+.section-title {
+  font-size: 2rem;
+  display: block;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+// Below we're creating the lines beneath the section titles we're making them 2px tall 3rem long display block
+
+.bottom-line {
+  height: 2px;
+  width: 3rem;
+  background: $main-color;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+// Backgrounds
+
+.bg {
+  &-main {
+    background: $main-color;
+    color: set-text-color($main-color);
+  }
+  &-dark {
+    background: $dark-color;
+    color: set-text-color($dark-color);
+  }
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color);
+  }
+  &-medium {
+    background: $medium-color;
+    color: set-text-color($medium-color);
+  }
+}

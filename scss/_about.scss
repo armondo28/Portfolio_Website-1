@@ -1,0 +1,276 @@
+// About page
+
+// below we're creating a new header called header inner specifically for the about page. we're cutting off the background at 5.5 rem and we added a border bottom of solid main to separate from rest of page. we also added &-inner > * to the header-inner bracket position relative z-index two meaning anything elements within header inner is brought up
+
+#header {
+  &-inner {
+    position: relative;
+    background: $bgimage 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 3px solid $main-color;
+  }
+  &-inner > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// below we created the overlay for heading we made the height 5.5rem to match the height of header inner above
+#header {
+  &-inner::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 5.5rem;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+// About sections
+
+// we're taking the about a section about info setting everything inside as a grid area w/ a grid gap of 1.2rem
+// About A
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bioimage bio bio"
+        "bioimage quote quote"
+        "aw1 aw2 aw3";
+      grid-gap: 1.2rem;
+    }
+
+    // Below is the section where I put strive for greatness
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-family: "Pacifico", cursive;
+      grid-area: quote;
+      color: $main-color;
+      font-size: 3rem;
+      transition: color 2s ease-in-out;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+
+    // Grid area assignments. IN ORDER FOR GRID AREA TO WORK WE HAVE TO ASSIGN THERE NAMES TO ACTUAL CLASSES AS PER BELOW
+
+    .bio-image {
+      grid-area: bioimage;
+    }
+
+    // Below is the section where I talk about what I offer right next to my photo I added overflow auto to keep the words inside the textbox
+
+    .bio {
+      grid-area: bio;
+      font-size: 1.3rem;
+      border-left: 3px solid $main-color;
+      border-bottom: 3px solid $main-color;
+      padding: 0.8rem;
+      height: 200px;
+      overflow: auto;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+    .award-2 {
+      grid-area: aw2;
+    }
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    // Below are the award symbols we made them $main color 1 rem margin all sides and color transition
+
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      margin: 1rem;
+      transition: color 1s ease-in;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  // About B
+
+  // These are the progress bars. overflow is hidden so it's contained the height is 20px each. background is medium color is grey. border radius is 5px rounded edges. margin bottom is .5rem for spacing
+
+  &-b {
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background: $medium-color;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+
+      // Each of these below are the specific progress bars that move from 0 to 100% height is 100% to take up entire area text color and text align are for in case we put words inside. animation is for the movement of the progress bar then we created keyframes at the bottom so they can move. we also created a transition/ hover so that the progress bars change color when we hover over them.
+
+      .html {
+        height: 100%;
+        color: white;
+        text-align: center;
+        background: $main-color;
+        animation: html 8s ease-in-out;
+        animation-fill-mode: both;
+        transition: background-color 1s ease-in;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+      .java {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+        animation: java 9s ease-in-out;
+        animation-fill-mode: both;
+        transition: background-color 1s ease-in;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+      .python {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+        animation: python 10s ease-in-out;
+        animation-fill-mode: both;
+        transition: background-color 1s ease-in;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+      .photography {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+        animation: photography 9s ease-in-out;
+        animation-fill-mode: both;
+        transition: background-color 1s ease-in;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+      .wordpress {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+        animation: wordpress 11s ease-in-out;
+        animation-fill-mode: both;
+        transition: background-color 1s ease-in;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  // About C
+  &-c {
+    background-color: $light-color;
+
+    .about-logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      img {
+        width: 90%;
+        border: $main-color solid 4px;
+        height: 90%;
+      }
+    }
+  }
+
+  // section D testimonials
+
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        border: 1px solid $medium-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// These are the keyframes below used to fill up the bars.
+
+@keyframes html {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes java {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 92%;
+  }
+}
+@keyframes python {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes photography {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 94%;
+  }
+}
+@keyframes wordpress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 73%;
+  }
+}

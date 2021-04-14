@@ -1,0 +1,179 @@
+// Mediaqueries
+
+// tablets and smaller
+
+// Below we are taking the header home and changing it once it hits 800 px we're make the height 30rem we put Important otherwise it doesnt work we also put a little padding to the top 5rem
+@media (max-width: 800px) {
+  #header {
+    &-home {
+      height: 30rem !important;
+
+      .header-content {
+        padding-top: 5rem;
+      }
+    }
+  }
+}
+
+// Smartphones
+
+// for below is smartphones size we grabbed the main nav and put everything in column so that way they stack up we also aligned them and put padding of 1rem for all li's
+
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      padding: 1rem;
+    }
+  }
+
+  // Below we grabbed the header home and made it 10rem w/ important cause it doesn't grab it otherwise we also changed the background to show the top of the photo because other it would show my face and thats weird
+  #header {
+    &-home {
+      height: 10rem !important;
+      border-bottom: 3px solid $main-color;
+      background: $bgimage no-repeat center top / cover !important;
+
+      // We want the typedisplay to disappear at this size
+
+      .header-content {
+        display: none;
+      }
+    }
+
+    // for the other pages we did the same thing
+
+    &-inner {
+      height: 10rem !important;
+      background: $bgimage no-repeat center top / cover;
+    }
+
+    // below is the overlay we also had to make it 10 rem to match.
+
+    &-inner::after {
+      height: 10rem !important;
+    }
+  }
+  // Stack grids columns
+
+  #home-a .specials,
+  #home-b .stats,
+  #home-c .process,
+  #about-d .testimonials,
+  .items,
+  #about-c .about-logos {
+    grid-template-columns: 1fr !important;
+  }
+
+  // Below we're adding a slight border to each of the home special divs
+
+  #home {
+    &-a {
+      .specials div {
+        border-bottom: 1px $light-color solid;
+        padding-bottom: 1rem;
+
+        // we didn't want a border on the last child
+
+        &:last-child {
+          border: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+    &-b {
+      .stats div {
+        padding: 2rem 0 1rem 0;
+      }
+    }
+  }
+
+  // About
+
+  #about {
+    &-a {
+      .about-info {
+        grid-template-areas:
+          "bioimage"
+          "bio"
+          "quote"
+          "aw1"
+          "aw2"
+          "aw3";
+      }
+    }
+  }
+
+  // contact
+
+  #contact {
+    &-a {
+      .text-fields {
+        grid-template-areas:
+          "name"
+          "subject"
+          "email"
+          "phone"
+          "message";
+      }
+    }
+    &-b {
+      .contact-info {
+        grid-template-columns: 1fr;
+
+        div {
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px rgb(82, 81, 81) solid;
+
+          &:last-child {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-c {
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  // footer
+
+  // Below we want all the social media icons to stack up we also want the main footer to be a bit taller and everything padding of 1 rem all sides and height 5rem
+  #main-footer {
+    height: 7rem;
+
+    .footer-content {
+      flex-direction: column;
+      padding: 1rem;
+      height: 5rem;
+    }
+  }
+}
+
+// LANDSCAPE
+
+@media (max-height: 580px) {
+  #header-home {
+    .header-content {
+      padding-top: 3rem;
+    }
+  }
+}
+
+@media (max-height: 330px) {
+  #header-home {
+    .header-content {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
