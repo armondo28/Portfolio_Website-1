@@ -7,6 +7,8 @@ $dark-color: #333;
 $secondary-color: #e803fc;
 $bgimage: url(../img/me.jpg);
 
+// ALWAYS MAKE SURE YOUR URL(HAS TWO DOTS IN FRONT OF /img/me.jpg otherwise it won't work!!!
+
 // Set text color this function allows the system to automatically choose an opposite color to whatever the other color inputted is
 
 @function set-text-color($color) {
