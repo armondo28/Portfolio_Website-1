@@ -35,13 +35,6 @@
       .text-input {
         padding: 0.5rem 1rem;
       }
-
-      .center {
-        display: flex;
-        justify-content: end;
-        align-items: flex-end;
-        text-align: end;
-      }
     }
 
     button[type="submit"] {
@@ -72,4 +65,11 @@
       font-size: 4rem;
     }
   }
+}
+
+.center {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  text-align: end;
 }
