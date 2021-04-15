@@ -45,7 +45,8 @@ input[class^="btn-"]:hover {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
 
 .py-1 {
   padding: 1rem 0; }
