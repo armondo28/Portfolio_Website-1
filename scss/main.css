@@ -670,19 +670,6 @@ input[class^="btn-"]:hover {
   font-size: 4rem;
 }
 
-.center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  text-align: end;
-}
-
 @media (max-width: 800px) {
   #header-home {
     height: 30rem !important;
@@ -825,6 +812,7 @@ img {
   font-size: 1.2rem !important;
   margin-left: 3rem;
   border-bottom: none !important;
+  color: white !important;
 }
 
 .logo:hover {
