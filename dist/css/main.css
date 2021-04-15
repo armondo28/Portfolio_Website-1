@@ -538,6 +538,19 @@ input[class^="btn-"]:hover {
 #contact-a .text-fields .text-input {
   padding: 0.5rem 1rem; }
 
+#contact-a .text-fields .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  text-align: end; }
+
 #contact-a button[type="submit"] {
   width: 30%;
   margin-top: 1.1rem; }
