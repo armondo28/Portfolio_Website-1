@@ -42,7 +42,9 @@
       margin-top: 1.1rem;
 
       &:hover {
-        color: black;
+        background-color: black;
+        color: white;
+        cursor: pointer;
       }
     }
   }

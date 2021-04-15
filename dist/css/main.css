@@ -35,18 +35,6 @@ input[class^="btn-"]:hover {
 .text-center {
   text-align: center; }
 
-.center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: end;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end; }
-
 .py-1 {
   padding: 1rem 0; }
 
@@ -555,7 +543,9 @@ input[class^="btn-"]:hover {
   margin-top: 1.1rem; }
 
 #contact-a button[type="submit"]:hover {
-  color: black; }
+  background-color: black;
+  color: white;
+  cursor: pointer; }
 
 #contact-b .contact-info {
   display: -ms-grid;
