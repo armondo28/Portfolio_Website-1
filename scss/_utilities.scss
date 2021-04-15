@@ -58,6 +58,13 @@ input[class^="btn-"]:hover {
   text-align: center;
 }
 
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 // Padding Classes we're setting up the utility padding classes so we can easily input them wherever we made need them
 
 .py {
