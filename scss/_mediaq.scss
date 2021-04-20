@@ -32,14 +32,16 @@
   // Below we grabbed the header home and made it 10rem w/ important cause it doesn't grab it otherwise we also changed the background to show the top of the photo because other it would show my face and thats weird
   #header {
     &-home {
-      height: 10rem !important;
+      height: 35rem !important;
       border-bottom: 3px solid $main-color;
       background: $bgimage no-repeat center top / cover !important;
 
       // We want the typedisplay to disappear at this size
 
       .header-content {
-        display: none;
+        h1 {
+          display: hidden;
+        }
       }
     }
 

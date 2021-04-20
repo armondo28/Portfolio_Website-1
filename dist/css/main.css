@@ -576,11 +576,11 @@ input[class^="btn-"]:hover {
   #main-nav li {
     padding: 1rem; }
   #header-home {
-    height: 10rem !important;
+    height: 35rem !important;
     border-bottom: 3px solid #8334eb;
     background: url(../img/me.jpg) no-repeat center top/cover !important; }
-  #header-home .header-content {
-    display: none; }
+  #header-home .header-content h1 {
+    display: hidden; }
   #header-inner {
     height: 10rem !important;
     background: url(../img/me.jpg) no-repeat center top/cover; }
